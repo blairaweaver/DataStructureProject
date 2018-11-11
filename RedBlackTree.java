@@ -136,12 +136,12 @@ public class RedBlackTree<K extends Comparable<K>, E> {
 
     public void inOrder(RBNode<K, E> e) {
         if (e.getLeftChild() != null) inOrder(e.getLeftChild());
-        if (e.getElement() != null) System.out.println(e.getElement() + " " + e.getAux());
+        if (e.getElement() != null) System.out.print(e.getElement() + " ");
         if (e.getRightChild() != null) inOrder(e.getRightChild());
     }
 
     public void preOrder(RBNode<K, E> e) {
-        if (e.getElement() != null) System.out.print(e.getElement());
+        if (e.getElement() != null) System.out.print(e.getElement()+ " ");
         if (e.getLeftChild() != null) preOrder(e.getLeftChild());
         if (e.getRightChild() != null) preOrder(e.getRightChild());
     }
@@ -349,7 +349,9 @@ public class RedBlackTree<K extends Comparable<K>, E> {
         test.insert(5, "5");
         test.insert(17, "17");
         test.inOrder(test.root);
+        System.out.println();
         test.preOrder(test.root);
+        System.out.println();
 
         test.delete(3);
         test.delete(12);
@@ -359,7 +361,9 @@ public class RedBlackTree<K extends Comparable<K>, E> {
         test.delete(16);
 
         test.inOrder(test.root);
+        System.out.println();
         test.preOrder(test.root);
+        System.out.println();
         System.out.println(test.getRoot().getElement());
     }
 }
